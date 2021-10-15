@@ -21,8 +21,10 @@ jobs:
     - name: Build
       run: go build -v ./...
 
-    - name: Test
-      run: go test -v ./...
+   
 
     - name: Compile
       run: make compile
+
+    - name: Test
+      run: make test

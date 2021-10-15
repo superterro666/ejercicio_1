@@ -1,9 +1,16 @@
 ## Configure Go build options
 GIN_MODE = "release"
 CGO_ENABLED = 0
+DOCKER = "docker ps -aq"
 
 ## Configure DB connection params
 DB = "root:password@(localhost:3306)/library"
+
+stop:
+	docker stop $$(docker ps -aq) && docker container rm $$(docker ps -aq) -f 
+
+compile:
+	docker-compose up -d
 
 run:
 	 cd cmd/geekshubs-library && GIN_MODE=${GIN_MODE} DB=${DB} go run main.go

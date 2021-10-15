@@ -1,0 +1,28 @@
+version: '3.1'
+services:
+    db:
+        image: mysql
+        restart: always
+        container_name: msyql
+        volumes:
+            - ./data:/var/lib/mysql
+            - ./data/mysql:/docker-entrypoint-initdb.d
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_USER: root
+            MYSQL_DATABASE: library
+            MYSQL_PASSWORD: password
+       
+            
+        
+    go:
+        build: .
+        restart: always
+        ports:
+            - 8080
+        
+        
+
+
+
+  

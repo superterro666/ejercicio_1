@@ -24,7 +24,7 @@ lint:
 	golint -set_exit_status ./...
 
 curl:
-	 curl --fail http://localhost:8080/api/
+	 sleep 10 && curl --fail http://localhost:8080/api/
 
 build:
 	# MacOS

@@ -13,8 +13,6 @@ services:
             MYSQL_DATABASE: library
             MYSQL_PASSWORD: password
        
-            
-        
     go:
         build: .
         restart: always

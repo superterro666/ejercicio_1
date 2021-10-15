@@ -31,3 +31,6 @@ jobs:
 
     - name: Lint
       run: make lint
+      
+    - name: Curl
+      run: make curl
